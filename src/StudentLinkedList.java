@@ -21,4 +21,14 @@ public class StudentLinkedList {
         size++;
         return true;
     }
+    public Student searchStudent(String studentId) {
+        Node current = head;
+        while (current != null) {
+            if (current.data.getStudentId().equalsIgnoreCase(studentId)) {
+                return current.data;
+            }
+            current = current.next;
+        }
+        return null;
+    }
 }
