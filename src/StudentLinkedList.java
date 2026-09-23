@@ -8,7 +8,7 @@ public class StudentLinkedList {
     private Node head;
     private int size;
 
-public boolean addStudent(Student student) {
+    public boolean addStudent(Student student) {
         if (searchStudent(student.getStudentId()) != null) return false;
         Node newNode = new Node(student);
         if (head == null) {
@@ -21,7 +21,7 @@ public boolean addStudent(Student student) {
         size++;
         return true;
     }
-public Student searchStudent(String studentId) {
+    public Student searchStudent(String studentId) {
         Node current = head;
         while (current != null) {
             if (current.data.getStudentId().equalsIgnoreCase(studentId)) {
@@ -44,5 +44,20 @@ public boolean updateStudent(String studentId, String name, String programme, do
             current = current.next;
         }
         return false;
+    }
+    public Student deleteStudent(String studentId) {
+        Node current = head;
+        Node previous = null;
+        while (current != null) {
+            if (current.data.getStudentId().equalsIgnoreCase(studentId)) {
+                if (previous == null) head = current.next;
+                else previous.next = current.next;
+                size--;
+                return current.data;
+            }
+            previous = current;
+            current = current.next;
+        }
+        return null;
     }
 }
