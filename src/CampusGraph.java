@@ -30,4 +30,11 @@ public class CampusGraph {
         adjacencyList.get(to).add(from);
         return true;
     }
+
+    public boolean removeConnection(String from, String to) {
+        if (!adjacencyList.containsKey(from) || !adjacencyList.containsKey(to)) return false;
+        boolean removed = adjacencyList.get(from).remove(to);
+        adjacencyList.get(to).remove(from);
+        return removed;
+    }
 }
