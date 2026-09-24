@@ -22,4 +22,12 @@ public class CampusGraph {
     }
 
     public boolean hasLocation(String location) { return adjacencyList.containsKey(location); }
+
+    public boolean addConnection(String from, String to) {
+        if (!adjacencyList.containsKey(from) || !adjacencyList.containsKey(to)) return false;
+        if (adjacencyList.get(from).contains(to)) return false;
+        adjacencyList.get(from).add(to);
+        adjacencyList.get(to).add(from);
+        return true;
+    }
 }
