@@ -11,4 +11,15 @@ public class CampusGraph {
         adjacencyList.put(location, new ArrayList<>());
         return true;
     }
+
+    public boolean removeLocation(String location) {
+        if (!adjacencyList.containsKey(location)) return false;
+        adjacencyList.remove(location);
+        for (List<String> neighbours : adjacencyList.values()) {
+            neighbours.remove(location);
+        }
+        return true;
+    }
+
+    public boolean hasLocation(String location) { return adjacencyList.containsKey(location); }
 }
