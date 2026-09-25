@@ -1,4 +1,4 @@
-public class StudentLinkedList {
+ public class StudentLinkedList {
     private class Node {
         Student data;
         Node next;
@@ -60,4 +60,19 @@ public boolean updateStudent(String studentId, String name, String programme, do
         }
         return null;
     }
+
+public void displayAll() {
+        if (head == null) {
+            System.out.println("No student records found.");
+            return;
+        }
+        System.out.println("---- Student Records (Linked List) ----");
+        Node current = head;
+        while (current != null) {
+            System.out.println(current.data);
+            current = current.next;
+        }
+    }
+
+    public int size() { return size; }
 }
