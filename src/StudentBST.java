@@ -18,4 +18,14 @@ public class StudentBST {
         else if (cmp > 0) node.right = insertRec(node.right, student);
         return node;
     }
+
+public Student search(String studentId) {
+        TreeNode current = root;
+        while (current != null) {
+            int cmp = studentId.compareToIgnoreCase(current.data.getStudentId());
+            if (cmp == 0) return current.data;
+            current = (cmp < 0) ? current.left : current.right;
+        }
+        return null;
+    }
 }
