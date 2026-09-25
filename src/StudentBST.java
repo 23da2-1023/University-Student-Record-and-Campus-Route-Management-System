@@ -55,4 +55,20 @@ public Student search(String studentId) {
         if (node == null) return 0;
         return 1 + countNodes(node.left) + countNodes(node.right);
     }
+
+public void displayInOrder() {
+        if (root == null) {
+            System.out.println("BST is empty.");
+            return;
+        }
+        System.out.println("---- Students Sorted by ID (BST In-order) ----");
+        inOrderRec(root);
+    }
+
+    private void inOrderRec(TreeNode node) {
+        if (node == null) return;
+        inOrderRec(node.left);
+        System.out.println(node.data);
+        inOrderRec(node.right);
+    }
 }
