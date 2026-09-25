@@ -65,4 +65,25 @@ public void displayNetwork() {
         }
         System.out.println("BFS from " + start + ": " + order);
     }
+
+public void dfs(String start) {
+        if (!adjacencyList.containsKey(start)) {
+            System.out.println("Location not found: " + start);
+            return;
+        }
+        java.util.Set<String> visited = new java.util.HashSet<>();
+        List<String> order = new ArrayList<>();
+        dfsRecursive(start, visited, order);
+        System.out.println("DFS from " + start + ": " + order);
+    }
+
+    private void dfsRecursive(String current, java.util.Set<String> visited, List<String> order) {
+        visited.add(current);
+        order.add(current);
+        for (String neighbour : adjacencyList.get(current)) {
+            if (!visited.contains(neighbour)) {
+                dfsRecursive(neighbour, visited, order);
+            }
+        }
+    }
 }
