@@ -14,4 +14,16 @@ public class ActionStack {
         top = newNode;
         size++;
     }
+
+public String pop() {
+        if (isEmpty()) return null;
+        String action = top.action;
+        top = top.next;
+        size--;
+        return action;
+    }
+
+    public String peek() { return isEmpty() ? null : top.action; }
+    public boolean isEmpty() { return top == null; }
+    public int size() { return size; }
 }
