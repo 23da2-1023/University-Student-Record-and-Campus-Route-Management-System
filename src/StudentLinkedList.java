@@ -1,4 +1,5 @@
- public class StudentLinkedList {
+public class StudentLinkedList {
+
     private class Node {
         Student data;
         Node next;
@@ -21,6 +22,7 @@
         size++;
         return true;
     }
+
     public Student searchStudent(String studentId) {
         Node current = head;
         while (current != null) {
@@ -32,7 +34,7 @@
         return null;
     }
 
-public boolean updateStudent(String studentId, String name, String programme, double marks) {
+    public boolean updateStudent(String studentId, String name, String programme, double marks) {
         Node current = head;
         while (current != null) {
             if (current.data.getStudentId().equalsIgnoreCase(studentId)) {
@@ -45,6 +47,7 @@ public boolean updateStudent(String studentId, String name, String programme, do
         }
         return false;
     }
+
     public Student deleteStudent(String studentId) {
         Node current = head;
         Node previous = null;
@@ -61,7 +64,7 @@ public boolean updateStudent(String studentId, String name, String programme, do
         return null;
     }
 
-public void displayAll() {
+    public void displayAll() {
         if (head == null) {
             System.out.println("No student records found.");
             return;
