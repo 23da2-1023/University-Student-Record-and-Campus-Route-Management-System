@@ -28,4 +28,31 @@ public Student search(String studentId) {
         }
         return null;
     }
+
+    public boolean delete(String studentId) {
+        int before = countNodes(root);
+        root = deleteRec(root, studentId);
+        return countNodes(root) < before;
+    }
+
+    private TreeNode deleteRec(TreeNode node, String studentId) {
+        if (node == null) return null;
+        int cmp = studentId.compareToIgnoreCase(node.data.getStudentId());
+        if (cmp < 0) node.left = deleteRec(node.left, studentId);
+        else if (cmp > 0) node.right = deleteRec(node.right, studentId);
+        else {
+            if (node.left == null) return node.right;
+            if (node.right == null) return node.left;
+            TreeNode successor = node.right;
+            while (successor.left != null) successor = successor.left;
+            node.data = successor.data;
+            node.right = deleteRec(node.right, successor.data.getStudentId());
+        }
+        return node;
+    }
+
+    private int countNodes(TreeNode node) {
+        if (node == null) return 0;
+        return 1 + countNodes(node.left) + countNodes(node.right);
+    }
 }
