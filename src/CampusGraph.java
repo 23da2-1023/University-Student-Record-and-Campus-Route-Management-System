@@ -41,4 +41,28 @@ public void displayNetwork() {
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
     }
+
+    public void bfs(String start) {
+        if (!adjacencyList.containsKey(start)) {
+            System.out.println("Location not found: " + start);
+            return;
+        }
+        java.util.Set<String> visited = new java.util.HashSet<>();
+        java.util.Queue<String> queue = new java.util.LinkedList<>();
+        List<String> order = new ArrayList<>();
+
+        visited.add(start);
+        queue.add(start);
+        while (!queue.isEmpty()) {
+            String current = queue.poll();
+            order.add(current);
+            for (String neighbour : adjacencyList.get(current)) {
+                if (!visited.contains(neighbour)) {
+                    visited.add(neighbour);
+                    queue.add(neighbour);
+                }
+            }
+        }
+        System.out.println("BFS from " + start + ": " + order);
+    }
 }
