@@ -18,4 +18,15 @@ public class ServiceQueue {
         }
         size++;
     }
+    public String dequeue() {
+        if (isEmpty()) return null;
+        String request = front.request;
+        front = front.next;
+        if (front == null) rear = null;
+        size--;
+        return request;
+    }
+
+    public boolean isEmpty() { return front == null; }
+    public int size() { return size; }
 }
