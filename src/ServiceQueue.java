@@ -29,4 +29,20 @@ public class ServiceQueue {
 
     public boolean isEmpty() { return front == null; }
     public int size() { return size; }
+
+public void displayPending() {
+        if (isEmpty()) {
+            System.out.println("No pending service requests.");
+            return;
+        }
+        System.out.println("---- Pending Service Requests (Queue, arrival order) ----");
+        Node current = front;
+        int count = 1;
+        while (current != null) {
+            System.out.println(count + ". " + current.request);
+            current = current.next;
+            count++;
+        }
+    }
+
 }
