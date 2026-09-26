@@ -30,4 +30,30 @@ public void insert(Student student) {
             current.next = newNode;
         }
     }
+
+public boolean remove(String studentId) {
+        int index = hash(studentId);
+        Node current = buckets[index];
+        Node previous = null;
+        while (current != null) {
+            if (current.data.getStudentId().equalsIgnoreCase(studentId)) {
+                if (previous == null) buckets[index] = current.next;
+                else previous.next = current.next;
+                return true;
+            }
+            previous = current;
+            current = current.next;
+        }
+        return false;
+    }
+
+    public Student search(String studentId) {
+        int index = hash(studentId);
+        Node current = buckets[index];
+        while (current != null) {
+            if (current.data.getStudentId().equalsIgnoreCase(studentId)) return current.data;
+            current = current.next;
+        }
+        return null;
+    }
 }
