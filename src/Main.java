@@ -159,7 +159,8 @@ public class Main {
         System.out.println("Processing: " + next);
     }
 
-    // ---------- Campus graph operations ----------
+        // ---------- Campus graph operations ----------
+    // Implemented by [Shahra] using CampusGraph (adjacency list, BFS/DFS traversal)
 
     private static void addCampusLocation() {
         String location = readNonEmpty("Enter new campus location name: ");
