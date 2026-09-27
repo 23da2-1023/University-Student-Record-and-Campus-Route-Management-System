@@ -130,7 +130,8 @@ public class Main {
         }
     }
 
-    // ---------- Service request (queue) operations ----------
+        // ---------- Service request (queue) operations ----------
+    // Implemented by [Jesla] using ServiceQueue (FIFO) and ActionStack (action logging)
 
     private static void addServiceRequest() {
         String request = readNonEmpty("Enter service request description (e.g. Student ID + reason): ");
