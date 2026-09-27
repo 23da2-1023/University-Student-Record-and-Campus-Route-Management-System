@@ -76,7 +76,10 @@ java Main
 
 ## 6. GitHub Collaboration
 - Each member have committed progressively on their own feature branch
-| M.S.A. Shihani | 23DA2-1023 |  |
-| M.I.A. Manoona | 23DA2-1054 |  | 
-| M.M.F. Shahra | 23DA2-1056 |  |
-| A.K. Jesla | 23DA2-0995 |  |
+
+| Name | Student ID |GitHub User.name  | GitHub User.email
+
+| M.S.A. Shihani | 23DA2-1023 | 23da2-1023 | https://github.com/23da2-1023 |
+| M.I.A. Manoona | 23DA2-1054 | 23da2-1054 | https://github.com/23da2-1054 ||
+| M.M.F. Shahra | 23DA2-1056 | 23da2-1056-sahra | https://github.com/23da2-1056-sahra |
+| A.K. Jesla | 23DA2-0995 | 23da2-0995 | https://github.com/23da2-0995 |
