@@ -129,7 +129,7 @@ public class Main {
         actionStack.push("Deleted student " + id + " (" + removed.getName() + ")");
         System.out.println("Student deleted successfully.");
     }
-
+    // Implemented by [Manoona] using StudentHashTable (O(1) average search) and StudentBST (sorted display)
     private static void searchStudentByHashing() {
         String id = readNonEmpty("Enter Student ID to search: ");
         Student found = studentHashTable.search(id);
