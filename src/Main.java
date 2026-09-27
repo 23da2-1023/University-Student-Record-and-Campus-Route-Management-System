@@ -78,8 +78,7 @@ public class Main {
         System.out.println("16. Exit");
     }
 
-        // ---------- Student record operations ----------
-    // Implemented by [Member 1 Name] using StudentLinkedList (add/update/delete/search/display)
+    // ---------- Student record operations ----------
 
     private static void addStudentRecord() {
         String id = readNonEmpty("Enter Student ID: ");
@@ -130,7 +129,7 @@ public class Main {
         actionStack.push("Deleted student " + id + " (" + removed.getName() + ")");
         System.out.println("Student deleted successfully.");
     }
-
+    // Implemented by [Manoona] using StudentHashTable (O(1) average search) and StudentBST (sorted display)
     private static void searchStudentByHashing() {
         String id = readNonEmpty("Enter Student ID to search: ");
         Student found = studentHashTable.search(id);
@@ -141,7 +140,8 @@ public class Main {
         }
     }
 
-    // ---------- Service request (queue) operations ----------
+        // ---------- Service request (queue) operations ----------
+    // Implemented by [23da2-0995] using ServiceQueue (FIFO) and ActionStack (action logging)
 
     private static void addServiceRequest() {
         String request = readNonEmpty("Enter service request description (e.g. Student ID + reason): ");
@@ -160,7 +160,8 @@ public class Main {
         System.out.println("Processing: " + next);
     }
 
-    // ---------- Campus graph operations ----------
+        // ---------- Campus graph operations ----------
+    // Implemented by [Shahra] using CampusGraph (adjacency list, BFS/DFS traversal)
 
     private static void addCampusLocation() {
         String location = readNonEmpty("Enter new campus location name: ");
