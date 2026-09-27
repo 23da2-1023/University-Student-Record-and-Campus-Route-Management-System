@@ -2,17 +2,6 @@ import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * University Student Record and Campus Route Management System
- * CIT300 - Graded Practical Assignment 1
- *
- * Menu-driven console application demonstrating:
- * linked list, stack, queue, BST, hashing, and graph (BFS/DFS).
- *
- * TODO (team): replace this skeleton's integration logic with your
- * own tested implementations where needed, and keep committing
- * progressively to GitHub as you go — don't wait for one final commit.
- */
 public class Main {
 
     private static Scanner scanner = new Scanner(System.in);
@@ -78,7 +67,8 @@ public class Main {
         System.out.println("16. Exit");
     }
 
-    // ---------- Student record operations ----------
+        // ---------- Student record operations ----------
+    // Implemented by [Shihani] using StudentLinkedList (add/update/delete/search/display)
 
     private static void addStudentRecord() {
         String id = readNonEmpty("Enter Student ID: ");
