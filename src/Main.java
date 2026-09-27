@@ -78,7 +78,8 @@ public class Main {
         System.out.println("16. Exit");
     }
 
-    // ---------- Student record operations ----------
+        // ---------- Student record operations ----------
+    // Implemented by [Member 1 Name] using StudentLinkedList (add/update/delete/search/display)
 
     private static void addStudentRecord() {
         String id = readNonEmpty("Enter Student ID: ");
